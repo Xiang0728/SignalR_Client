@@ -1,32 +1,81 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-main class="MainContent">
+      
+      <v-row id="MainGrid" >
+        <v-col v-if="isLogin" cols="2">
+          <Menu></Menu>
+        </v-col >
+     
+        <v-col>
+          
+          <router-view />
+        </v-col>
+       </v-row>
+
+    </v-main>
+
+   
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+//import * as signalR from '@aspnet/signalr'
+import Menu from '@/components/menu.vue';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default {
+  name: "App",
+  components:{
+    Menu,
+  
+  },
 
-    &.router-link-exact-active {
-      color: #42b983;
+  data () {
+      return {
+        isLogin:false
+      } 
+    },
+    created(){
+     
+        window.gapi.load('auth2', () => {
+        window.gapi.auth2.init({
+        client_id: '285097445447-8iqs2d21rlb66loq8ufp2devrnouhaqq.apps.googleusercontent.com',
+        });
+      });
+       
+    },
+    watch: {
+      '$store.state.token':function(){       
+        if(this.$store.state.token!="")
+        {
+          this.isLogin=true;
+        }
+        else
+        {
+          this.isLogin=false;
+        }
+      }
     }
+    
+
+};
+</script>
+
+<style >
+  html,body,#MainGrid{
+    
+    height: 100%;
+    padding: 0px;
+    margin: 0%;
+
   }
-}
+
+  .MainContent123{
+   
+    background-color: #fffcf4;
+  }
+
 </style>
+
+
