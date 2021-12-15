@@ -5,7 +5,7 @@
       <v-form >   
 
         <v-text-field label="Account"></v-text-field>
-        <v-text-field label="Password"></v-text-field>
+        <v-text-field :type="'password'" label="Password"></v-text-field>
         
         <v-row>        
           <v-col>           

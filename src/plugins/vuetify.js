@@ -7,6 +7,7 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
+        MenuTitle:colors.blue,
         primary: colors.blue,
         secondary: colors.grey.darken1,
         accent: colors.shades.black,

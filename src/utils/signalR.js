@@ -11,7 +11,7 @@ export const signal = new signalR.HubConnectionBuilder()
   }
   return hub
 } */
-//  自动重连
+//  重新連線
 /* async function start () {
   try {
     await signal.start()
@@ -24,10 +24,5 @@ export const signal = new signalR.HubConnectionBuilder()
  
 signal.onclose(async () => {
   await start()
-})
+})*/
 
-export default {
-    install: function(Vue) {
-        Vue.prototype.signalr = signal
-    }
-}*/

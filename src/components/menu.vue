@@ -3,48 +3,47 @@
    <v-navigation-drawer >
 
 
-        <v-list-item>
-          <v-list-item-content>
-            
-                <v-list-item-icon>
-                  <v-icon x-large>{{ UserIcon }}</v-icon>
-                </v-list-item-icon>
-
-                <v-list-item-content>
-                  <v-list-item-title class="text-h6"> {{UserName}}</v-list-item-title>
-                </v-list-item-content>
-                               
-         
-          </v-list-item-content>
-        </v-list-item>
+    <v-list-item >
+      <v-list-item-content >
         
-  <v-divider></v-divider>
-        <v-list>
-          <v-list-item v-for="item in items" :key="item.title" @click="$router.push({ path: item.route })" link>
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
+            <v-list-item-icon >
+              <v-icon x-large>{{ UserIcon }}</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title class="text-h6"> {{UserName}}</v-list-item-title>
             </v-list-item-content>
+                            
+      
+      </v-list-item-content>
+    </v-list-item>
+        
+    <v-divider></v-divider>
 
-          </v-list-item>
+    <v-list>
+      <v-list-item v-for="item in items" :key="item.title" @click="$router.push({ path: item.route })" link>
+        <v-list-item-icon>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
 
+        <v-list-item-content>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item-content>
 
+      </v-list-item>
 
-          <v-list-item link>
+      <v-list-item link>
 
-             <v-list-item-icon>
-              <v-icon>{{LogOutIcon}}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title @click="Logout">登出</v-list-item-title>
-            </v-list-item-content>
+          <v-list-item-icon>
+          <v-icon>{{LogOutIcon}}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title @click="Logout">登出</v-list-item-title>
+        </v-list-item-content>
 
-          </v-list-item>
+      </v-list-item>
 
-        </v-list>
+    </v-list>
    </v-navigation-drawer>
 
 

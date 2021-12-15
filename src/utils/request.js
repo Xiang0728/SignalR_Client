@@ -12,7 +12,7 @@ axios.interceptors.request.use(
         return Promise.reject(err);
     });
 
-export const apiUserToken = () => axios.get('/Google/Test');
-
-
+//export const apiUserToken = () => axios.get('/Google/Test');
 export const apiGetUsers = () => axios.get('/Google/GetUsers');
+
+export const apiGetPrice = (data) => axios.post('/Robot/GetPrice',data);
