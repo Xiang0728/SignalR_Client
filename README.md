@@ -1,4 +1,4 @@
-# cue_vuetify
+# vue_vuetify
 
 ## Project setup
 ```
